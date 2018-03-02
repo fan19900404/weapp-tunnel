@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+sftp-config.json
+coverage/
+test/
+.gitignore
+.travis.yml
+jsconfig.json
+bower.json
+typings.json

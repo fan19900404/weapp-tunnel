@@ -1,0 +1,22 @@
+{
+  "name": "weapp-tunnel",
+  "version": "0.0.1",
+  "description": "一个信道服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fan19900404/weapp-tunnel.git"
+  },
+  "keywords": [
+    "tunnel"
+  ],
+  "author": "zf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fan19900404/weapp-tunnel/issues"
+  },
+  "homepage": "https://github.com/fan19900404/weapp-tunnel#readme"
+}
