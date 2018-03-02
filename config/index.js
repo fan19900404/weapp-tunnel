@@ -12,6 +12,7 @@ const config = {
   version: pkg.version, // 版本
   bindingHost: '0.0.0.0', // 绑定IPv4
   port: process.env.PORT || 3000, // 端口
+  tunnelSignatureKey: 'x89dk@138xk$x%19',// 信道签名
 };
 
 
