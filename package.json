@@ -21,6 +21,7 @@
   "homepage": "https://github.com/fan19900404/weapp-tunnel#readme",
   "dependencies": {
     "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
     "socket.io": "^2.0.4"
   }
