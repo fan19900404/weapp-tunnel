@@ -10,6 +10,9 @@ process.env.NODE_ENV = 'production';
 const http = require('http');
 const app = require('./app');
 
+// 全局tunnels，包含当前所有信道信息
+global.tunnels={};
+
 /**
  * Get port from environment and store in Express.
  */
