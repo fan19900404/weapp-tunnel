@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fan19900404/weapp-tunnel#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",

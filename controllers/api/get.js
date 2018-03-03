@@ -1,6 +1,6 @@
 const Router = require("koa-router");
 const md5 = require("../../utils/md5");
-const { check } = require("../../utils/signature");
+const { check,compute } = require("../../utils/signature");
 const config = require("../../config/index");
 const router = new Router();
 
@@ -17,7 +17,7 @@ const computeTunnelId = token => {
 
 // 业务服务器需要提供，token，url，signature
 router.post("/get/wsurl", ctx => {
-  console.log(global.tunnels);
+  
   const { token, url, signature } = ctx.request.body;
   if (!token || !url || !signature) {
     ctx.body = {
@@ -40,6 +40,9 @@ router.post("/get/wsurl", ctx => {
     token,
     createTime: +new Date()
   };
+
+  console.log(global.tunnels);
+  console.log(compute(`${token}${tunnelId}`));
 
   ctx.body = {
     code: 0,
