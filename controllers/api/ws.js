@@ -1,18 +1,8 @@
 const Router = require("koa-router");
 const router = new Router();
 
-router.post("/ws/push", ctx => {
-  // directive = {"type":"send","msg":{"a":456}}
-  const { tunnelId, token, directive, signature } = ctx.request.body;
-  // TODO 签名验证
-  let dc;
-  if (directive) {
-    dc = JSON.parse(directive);
-  }
-
-  const { socket } = global.tunnels[tunnelId];
-
-  const { type, msg } = dc;
+// 处理信息
+const handle = (socket, type, msg) => {
   switch (type) {
     case "send":
       socket.emit("msg", msg);
@@ -24,6 +14,25 @@ router.post("/ws/push", ctx => {
     default:
       console.log("指令错误");
   }
+};
+
+router.post("/ws/push", ctx => {
+  // directive = {"type":"send","msg":{"a":456}}
+  const { tunnelIds, directive, signature } = ctx.request.body;
+  // TODO 签名验证
+  let dc;
+  if (directive) {
+    dc = JSON.parse(directive);
+  }
+
+  const { type, msg } = dc;
+  
+  tunnelIds.forEach(tunnelId => {
+    const { socket } = global.tunnels[tunnelId];
+    if (socket) {
+      handle(socket, type, msg);
+    }
+  });
 
   ctx.body = {
     code: 0,
