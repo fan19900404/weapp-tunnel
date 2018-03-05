@@ -9,7 +9,7 @@ const ws = io => {
     tunnel.socket = socket;
     socket.on("msg", function(data) {
       console.log(data);
-      axios.post(tunnel.url, { token, data }).then(res => res);
+      axios.post(tunnel.url, { tunnelId, token, data }).then(res => res);
     });
   });
 
