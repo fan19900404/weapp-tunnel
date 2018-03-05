@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const config = require('./config/index');
+
 // 发布环境变量
 process.env.NODE_ENV = 'production';
 
@@ -17,7 +19,8 @@ global.tunnels={};
  * Get port from environment and store in Express.
  */
 /* eslint no-use-before-define: 0 */
-const port = normalizePort(process.env.PORT || '8000');
+// const port = normalizePort(process.env.PORT || '3000');
+const port = config.port;
 
 /**
  * Create HTTP server.
