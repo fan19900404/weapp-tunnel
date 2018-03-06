@@ -18,7 +18,6 @@ const handle = (socket, type, msg) => {
 
 router.post("/ws/push", ctx => {
   // directive = {"type":"send","msg":{"a":456}}
-  console.log(ctx.request.body);
   const { tunnelIds, directive, signature } = ctx.request.body;
   // TODO 签名验证
 
