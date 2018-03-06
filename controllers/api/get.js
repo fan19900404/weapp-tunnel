@@ -42,7 +42,6 @@ router.post("/get/wsurl", ctx => {
   };
 
   console.log(global.tunnels);
-  console.log(compute(`${token}${tunnelId}`));
 
   ctx.body = {
     code: 0,
