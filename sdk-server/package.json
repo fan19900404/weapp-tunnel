@@ -24,7 +24,7 @@
   "author": "CFETeam",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.20.0",
     "cos-nodejs-sdk-v5": "^2.0.6",
     "file-type": "^5.2.0",
     "knex": "^0.13.0",
